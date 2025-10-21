@@ -1,0 +1,22 @@
+<div class="contentView">
+  <div class="contentCategories">
+    <ul>
+      <li *ngFor="let category of categories$ | async">
+        <a
+          [routerLink]="['./', category.categoryName]"
+          routerLinkActive="active"
+          >{{ category.categoryName }}
+        </a>
+        <!-- <a>{{ category.name }}</a> -->
+      </li>
+    </ul>
+    <!-- <ul>
+      <li *ngFor="let sortItem of sortItems | sort">
+        <a>{{ sortItem }}</a>
+      </li>
+    </ul> -->
+  </div>
+  <div class="contentListView">
+    <router-outlet></router-outlet>
+  </div>
+</div>

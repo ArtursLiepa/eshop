@@ -1,0 +1,27 @@
+.serviceDetailView {
+    background-color: darkolivegreen;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+}
+
+.serviceNameView {
+    background-color: darkgoldenrod;
+    height: 100%;
+    color: black;
+    text-align: center;
+    size: 25px;
+}
+
+.serviceDetailView {
+    background-color: darkslateblue;
+    height: 100%;
+}
+
+.servicePriceView {
+    background-color: green;
+    height: 100%;
+    color: darkgoldenrod;
+    text-align: center;
+    size: 30px;
+}

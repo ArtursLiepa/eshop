@@ -1,0 +1,12 @@
+.mainView {
+    background-color: blue;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+}
+
+.contentView {
+    background-color: darkgoldenrod;
+    height: 100%;
+    display: block;
+}

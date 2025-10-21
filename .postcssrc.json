@@ -1,0 +1,9 @@
+{
+ "content":{},
+  "plugins": {
+    "@tailwindcss/postcss": {
+       
+    }
+  }
+  
+}

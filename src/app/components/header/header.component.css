@@ -1,0 +1,69 @@
+.headerView {
+    background-color: rgb(94, 88, 88);
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+
+.informationView {
+    background-color: rgb(145, 133, 133);
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.logoView {
+    background-color: darkgreen;
+    display: block;
+    height: 100%;
+
+}
+
+.navigationView {
+    background-color: inherit;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.dateView {
+    display: block;
+}
+
+.timeView {
+    display: inline;
+}
+
+.navigationView div {
+    background-color: inherit;
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.navigationView div a {
+    background-color: rgb(161, 151, 151);
+    display: block;
+    border-radius: 50%;
+    height: 80%;
+    width: 90%;
+    margin: 2px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: default;
+}
+
+
+.navigationView div a:hover {
+    background-color: rgb(34, 34, 95);
+}
+
+
+
+.navigationView div a:focus {
+    background-color: blue;
+    outline: 2px solid black;
+    /* outline-offset: 2px; */
+
+
+
+}

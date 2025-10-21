@@ -1,0 +1,38 @@
+.segmentlistcontainer {
+    background-color: darkgreen;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+
+}
+
+.segmentlistcontainerTop {
+    background-color: darkgreen;
+    height: 100%;
+}
+
+.segmenlistcontainerBottom {
+    background-color: darkslateblue;
+    height: 100%;
+}
+
+.segmentItem {
+    background-color: darkslategray;
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    width: 120px;
+    border: 1px solid red;
+    margin-left: 5px;
+}
+
+.segmentItem:hover {
+    background-color: rgb(35, 133, 133);
+
+}
+
+.segmentactive {
+    background-color: blue;
+    outline: 3px solid red;
+    outline-offset: 0px;
+}

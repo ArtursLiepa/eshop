@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {}
+
+body {
+    box-sizing: border-box;
+    background-color: coral;
+    padding: 0px;
+    margin: 0px;
+}
+
+.active {
+    background-color: rgb(8, 8, 129);
+}
+
+/* Global styles */
+
+.contentView {
+    background-color: darkgreen;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 10% 90%;
+}
+
+.contentCategories {
+    background-color: darkgray;
+    height: 100%;
+}
+
+.contentListView {
+    background-color: blueviolet;
+    height: 100%;
+
+}
+
+.productlistcontainer {
+    background-color: darkgreen;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+
+.productlistcontainerTop {
+    background-color: darkkhaki;
+    height: 100%;
+}
+
+.productlistcontainerTBottom {
+    background-color: darkslateblue;
+    height: 100%;
+}
+
+.Productsactive {
+    color: blue;
+    text-decoration: dotted;
+}
+
+.productContainer {
+    background-color: darkslategray;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+
+
+}
+
+.idView {
+    background-color: darkgreen;
+    display: inline-block;
+    height: 100%;
+}
+
+.nameView {
+    background-color: rgb(54, 66, 54);
+    display: inline-block;
+    height: 100%;
+}
+
+.priceView {
+    background-color: rgb(74, 85, 105);
+    display: inline-block;
+    height: 100%;
+}

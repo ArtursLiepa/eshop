@@ -1,0 +1,26 @@
+<div class="productlistcontainer">
+  <div class="productlistcontainerTop">
+    <ul>
+      <li *ngFor="let product of products$ | async">
+        <a
+          (click)="changeSelectedState()"
+          [routerLink]="['./', product.productName]"
+          routerLinkActive="Productsactive"
+          >{{ product.productName }}</a
+        >
+        <!-- <a>{{ product.name }}</a> -->
+      </li>
+    </ul>
+  </div>
+  <div
+    *ngIf="productselected; else noProduct"
+    class="productlistcontainerTBottom"
+  >
+    <router-outlet></router-outlet>
+  </div>
+  <div class="bg-blend-hue">
+    <ng-template #noProduct>
+      <p>No product selected!</p>
+    </ng-template>
+  </div>
+</div>
