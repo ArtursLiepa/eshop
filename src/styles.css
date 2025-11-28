@@ -66,18 +66,73 @@ body {
 
 .idView {
     background-color: darkgreen;
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
     height: 100%;
 }
 
-.nameView {
+.categoryView {
     background-color: rgb(54, 66, 54);
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
     height: 100%;
 }
 
 .priceView {
     background-color: rgb(74, 85, 105);
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
     height: 100%;
+}
+
+.itemView {
+    display: block;
+    width: 800px
+}
+
+.itemLabel {
+    display: inline-block;
+}
+
+.itemData {
+    display: inline-block;
+}
+
+
+
+.buttonView {
+    display: block;
+}
+
+.buttonView button {
+    display: inline-block;
+    background-color: darkgreen;
+    margin-left: 5px;
+    height: 40px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.editcontainerView {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.editLabelView {
+    display: inline-block
+}
+
+.dataInputView {
+    display: inline-block;
+    width: 100%;
+
+}
+
+.editLabelView:hover {
+    background-color: rgb(68, 68, 126);
+
+}
+
+.dataInputView:hover {
+    background-color: rgb(45, 45, 75);
 }

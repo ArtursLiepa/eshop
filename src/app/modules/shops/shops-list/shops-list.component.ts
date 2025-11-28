@@ -28,17 +28,17 @@ export class ShopsListComponent implements OnInit {
     this.shopselected = true;
   }
 
-  getShopList() {
+  getList() {
     this.activatedRoute.paramMap.subscribe((name) => {
       this.shopType = name.get('typeName');
       if (this.shopType == 'veikals') {
         this.veikalselected = true;
+        this.shops$ = this.shopListservice.getShopList();
       } else this.veikalselected = false;
-      this.shops$ = this.shopListservice.shopList(this.shopType);
     });
   }
 
   ngOnInit(): void {
-    this.getShopList();
+    this.getList();
   }
 }

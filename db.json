@@ -1,0 +1,277 @@
+{
+  "veikals": [
+    {
+      "id": "1",
+      "Name": "Banga",
+      "Country": "Latvia",
+      "Region": "Talsi",
+      "City": "Roja",
+      "Code": 3162
+    },
+    {
+      "id": "2",
+      "Name": "Mērsrags",
+      "Country": "Latvia",
+      "Region": "Talsi",
+      "City": "Mērsrags",
+      "Code": 3182
+    },
+    {
+      "id": "3",
+      "Name": "Valdemārpils",
+      "Country": "Latvia",
+      "Region": "Talsi",
+      "City": "Valdemārpils",
+      "Code": 700
+    },
+    {
+      "id": "4",
+      "Name": "Kolka",
+      "Country": "Latvia",
+      "Region": "Talsi",
+      "City": "Kolka",
+      "Code": 1005
+    },
+    {
+      "id": "5",
+      "Name": "Skrunda",
+      "Country": "Latvia",
+      "Region": "Saldus",
+      "City": "Skrunda",
+      "Code": 1089
+    },
+    {
+      "id": "6",
+      "Name": "Liepāja1",
+      "Country": "Latvia",
+      "Region": "Liepājas",
+      "City": "Liepāja",
+      "Code": 1015
+    },
+    {
+      "id": "7",
+      "Name": "Liepāja2",
+      "Country": "Latvia",
+      "Region": "Liepājas",
+      "City": "Liepāja",
+      "Code": 1015
+    }
+  ],
+  "e-veikals": {
+    "id": 401,
+    "Name": "Rīga store",
+    "Country": "Latvia",
+    "Region": "Rīga",
+    "City": "Rīga",
+    "Code": 39542
+  },
+  "shoptypes": [
+    {
+      "shopId": 1,
+      "typeName": "e-veikals",
+      "id": "3b61"
+    },
+    {
+      "shopId": 2,
+      "typeName": "veikals",
+      "id": "000e"
+    }
+  ],
+  "Category": [
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "id": "a180"
+    },
+    {
+      "categoryID": 2,
+      "categoryName": "Clothes",
+      "id": "9676"
+    },
+    {
+      "categoryID": 3,
+      "categoryName": "Shoes",
+      "id": "beee"
+    },
+    {
+      "categoryID": 4,
+      "categoryName": "Furnite",
+      "id": "1d58"
+    },
+    {
+      "categoryID": 5,
+      "categoryName": "Cars",
+      "id": "c9f8"
+    }
+  ],
+  "Segment": [
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 1,
+      "segmentName": "Computers",
+      "id": "3227"
+    },
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 2,
+      "segmentName": "Keyboards",
+      "id": "4139"
+    },
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 3,
+      "segmentName": "Micropohones",
+      "id": "2463"
+    },
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 4,
+      "segmentName": "Mouses",
+      "id": "dc3b"
+    },
+    {
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 5,
+      "segmentName": "Powerbanks",
+      "id": "eb32"
+    },
+    {
+      "categoryID": 2,
+      "categoryName": "Shoes",
+      "segmentID": 6,
+      "segmentName": "Sport",
+      "id": "47fe"
+    },
+    {
+      "categoryID": 2,
+      "categoryName": "Shoes",
+      "segmentID": 7,
+      "segmentName": "Hicking",
+      "id": "0b9f"
+    }
+  ],
+  "Products": [
+    {
+      "id": "0",
+      "productName": "",
+      "productPrice": 0,
+      "categoryID": 0,
+      "categoryName": "",
+      "segmentID": 0,
+      "segmentName": ""
+    },
+    {
+      "id": "100",
+      "productName": "Dell HC78",
+      "productPrice": 720,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 1,
+      "segmentName": "Computers"
+    },
+    {
+      "id": "101",
+      "productName": "Wireless HP HC556",
+      "productPrice": 120,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 2,
+      "segmentName": "Keyboards"
+    },
+    {
+      "id": "103",
+      "productName": "JBL 900",
+      "productPrice": 120,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 2,
+      "segmentName": "Micropohones"
+    },
+    {
+      "id": "104",
+      "productName": "JBL 800",
+      "productPrice": 150,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 2,
+      "segmentName": "Micropohones"
+    },
+    {
+      "id": "105",
+      "productName": "HTC 12",
+      "productPrice": 25,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 4,
+      "segmentName": "Mouses"
+    },
+    {
+      "id": "106",
+      "productName": "Dell",
+      "productPrice": 45,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 5,
+      "segmentName": "Powerbanks"
+    },
+    {
+      "id": "108",
+      "productName": "Nike",
+      "productPrice": 180,
+      "categoryID": 2,
+      "categoryName": "Shoes",
+      "segmentID": 6,
+      "segmentName": "Sport"
+    },
+    {
+      "id": "109",
+      "productName": "Dunlop",
+      "productPrice": 280,
+      "categoryID": 2,
+      "categoryName": "Shoes",
+      "segmentID": 7,
+      "segmentName": "Hicking"
+    },
+    {
+      "id": "455",
+      "productName": "JBL1050",
+      "productPrice": 200,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 3,
+      "segmentName": "Micropohones"
+    },
+    {
+      "id": "456",
+      "productName": "JBL2323",
+      "productPrice": 222,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 3,
+      "segmentName": "Micropohones"
+    },
+    {
+      "id": 109,
+      "productName": "JBL75",
+      "productPrice": 75,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 3,
+      "segmentName": "Micropohones"
+    },
+    {
+      "id": 119,
+      "productName": "JBL1055",
+      "productPrice": 125,
+      "categoryID": 1,
+      "categoryName": "Electronics",
+      "segmentID": 3,
+      "segmentName": "Micropohones"
+    }
+  ]
+}

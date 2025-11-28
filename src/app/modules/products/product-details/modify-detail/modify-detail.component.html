@@ -1,0 +1,162 @@
+<div class="modifyFormView" *ngIf="product$ | async as product">
+  <div class="FormInformation">
+    You are going to change data about {{ product.productName }}
+  </div>
+
+  <div class="editItemView">
+    <form [formGroup]="productForm" (ngSubmit)="creatproduct()">
+      <!--ProductName-->
+      <div class="ediDataView">
+        <div class="editItemLabel"><label for="name">Nosaukums</label></div>
+        <div class="itemData">{{ product.productName }}</div>
+        <div class="editDataInputView">
+          <input
+            placeholder="Nosaukums"
+            id="name"
+            formControlName="productName"
+          />
+
+          <div *ngIf="productForm.controls.productName.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.productName.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--ProductPrice-->
+      <div class="ediDataView">
+        <div class="editItemLabel">
+          <label for="price">Produkta cena</label>
+        </div>
+        <div class="itemData">
+          {{ product.productPrice | currency : "EUR" }}
+        </div>
+        <div class="editDataInputView">
+          <input placeholder="Cena" id="price" formControlName="productPrice" />
+
+          <div *ngIf="productForm.controls.productPrice.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.productPrice.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--ProductID-->
+      <div class="ediDataView">
+        <div class="editItemLabel"><label for="id">ID</label></div>
+        <div class="itemData">{{ product.id }}</div>
+        <div class="editDataInputView">
+          <input placeholder="ID" id="id" formControlName="id" required />
+
+          <div *ngIf="productForm.controls.id.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.id.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--CategoryName-->
+      <div class="ediDataView">
+        <div class="editItemLabel">
+          <label for="category">Produkta kategorija</label>
+        </div>
+        <div class="itemData">{{ product.categoryName }}</div>
+        <div class="editDataInputView">
+          <select formControlName="categoryName">
+            <option
+              *ngFor="let category of categories$ | async"
+              value="{{ category.categoryName }}"
+            >
+              {{ category.categoryName }}
+            </option>
+          </select>
+
+          <div *ngIf="productForm.controls.categoryName.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.categoryName.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--CategoryID-->
+      <div class="ediDataView">
+        <div class="editItemLabel">
+          <label for="categoryID">Kategorijas ID</label>
+        </div>
+        <div class="itemData">{{ product.categoryID }}</div>
+        <div class="editDataInputView">
+          <input
+            placeholder="Kategorijas ID"
+            id="categoryID"
+            formControlName="categoryID"
+          />
+
+          <div *ngIf="productForm.controls.categoryID.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.categoryID.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--SegmentName-->
+      <div class="ediDataView">
+        <div class="editItemLabel">
+          <label for="segments">Produkta segments</label>
+        </div>
+        <div class="itemData">{{ product.segmentName }}</div>
+        <div class="editDataInputView">
+          <select formControlName="segmentName">
+            <option
+              *ngFor="let segment of segments$ | async"
+              id="segments"
+              value="{{ segment.segmentName }}"
+            >
+              {{ segment.segmentName }}
+            </option>
+          </select>
+
+          <div *ngIf="productForm.controls.segmentName.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.segmentName.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+      <!--SegmentID-->
+      <div class="ediDataView">
+        <div class="editItemLabel">
+          <label for="segmentID">Segmenta ID</label>
+        </div>
+        <div class="itemData">{{ product.segmentID }}</div>
+        <div class="editDataInputView">
+          <input
+            placeholder="Segmenta ID"
+            id="segmentID"
+            formControlName="segmentID"
+          />
+
+          <div *ngIf="productForm.controls.segmentID.dirty">
+            <img src="check1.png" alt="Hi" />
+          </div>
+          <div *ngIf="productForm.controls.segmentID.pristine">
+            <img src="redMark.png" alt="Hi" />
+          </div>
+        </div>
+      </div>
+
+      <div class="buttonView">
+        <button [disabled]="!productForm.valid" *ngIf="!update" type="submit">
+          Save
+        </button>
+        <button *ngIf="update">Update</button>
+        <button type="button" (click)="cancelPressed()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

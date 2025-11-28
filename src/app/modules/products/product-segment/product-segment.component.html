@@ -1,14 +1,24 @@
 <div class="segmentlistcontainer">
   <div class="segmentlistcontainerTop">
-    <a
-      class="segmentItemLink"
-      *ngFor="let segment of segments$ | async"
-      [routerLink]="['./', segment.segmentName]"
-    >
-      <div class="segmentItem" routerLinkActive="segmentactive">
-        {{ segment.segmentName }}
-      </div></a
-    >
+    <div>
+      <a
+        class="segmentItemLink"
+        *ngFor="let segment of segments$ | async"
+        [routerLink]="['./', segment.segmentName]"
+      >
+        <div class="segmentItem" routerLinkActive="segmentactive">
+          {{ segment.segmentName }}
+        </div></a
+      >
+    </div>
+    <div>
+      <button class="addButton" type="button" (click)="addItem()">
+        Add item
+      </button>
+    </div>
+    <div *ngIf="addItemenabled">
+      <app-modify-detail (disableEditing)="disableToEdit()"></app-modify-detail>
+    </div>
 
     <!-- <div class="segmentItem" *ngFor="let segment of segments$ | async">
       <a

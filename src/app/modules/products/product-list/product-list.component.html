@@ -4,7 +4,7 @@
       <li *ngFor="let product of products$ | async">
         <a
           (click)="changeSelectedState()"
-          [routerLink]="['./', product.productName]"
+          [routerLink]="['./', product.id]"
           routerLinkActive="Productsactive"
           >{{ product.productName }}</a
         >

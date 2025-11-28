@@ -1,0 +1,81 @@
+.modifyFormView {
+    position: fixed;
+    top: 100px;
+    left: 600px;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    z-index: 1;
+    background-color: cadetblue;
+    height: 400px;
+    width: 450px;
+    border: 1px solid black;
+}
+
+.editItemView {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 30%;
+
+
+}
+
+.ediDataView {
+    background-color: rgb(153, 165, 153);
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    height: 100%;
+}
+
+.ediDataView:hover {
+    background-color: antiquewhite;
+
+}
+
+.ediDataViewInput:hover {
+    background-color: antiquewhite;
+
+}
+
+
+
+.editItemLabel {
+    display: inline-block;
+    text-align: start;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+}
+
+
+.editDataInputView {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    width: 100%;
+
+}
+
+.editDataInputView input {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+}
+
+.editDataInputView input:active {
+    background-color: blue;
+
+}
+
+.editDataInputView.ng-untouched {
+    border: 2px solid red;
+}
+
+.editDataInputView.ng-dirty {
+    border: 2px solid green;
+}
+
+.editDataInputView img {
+    /* background-color: green; */
+    padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    max-width: 100%;
+}

@@ -1,6 +1,6 @@
 export interface Type {
-  shopId: Number;
-  typeName: String;
+  shopId?: Number;
+  typeName?: String;
 }
 
 export interface Address {
@@ -8,11 +8,11 @@ export interface Address {
   Region?: String;
   City?: String;
   Street?: String;
-  Number?: Number;
+  stNumber?: Number;
   Code?: Number;
 }
 
 export interface Shop extends Address, Type {
-  id?: Number;
+  id: Number;
   Name: String;
 }

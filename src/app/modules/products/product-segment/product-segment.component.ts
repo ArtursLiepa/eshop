@@ -12,7 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductSegmentComponent implements OnInit {
   segments$: Observable<Segment[]>;
-  segmentId: any;
+  categoryname: string;
+  addItemenabled: boolean = false;
 
   constructor(
     private segmentService: ProductsService,
@@ -21,10 +22,19 @@ export class ProductSegmentComponent implements OnInit {
     this.segmentService = new ProductsService();
   }
 
+  addItem() {
+    this.addItemenabled = true;
+    console.log('Add product enabled');
+  }
+
+  disableToEdit() {
+    this.addItemenabled = false;
+  }
+
   private getsegmentList() {
     this.activatedRoute.paramMap.subscribe((id) => {
-      this.segmentId = id.get('category');
-      this.segments$ = this.segmentService.getSegmentList();
+      this.categoryname = id.get('category');
+      this.segments$ = this.segmentService.getSegmentList(this.categoryname);
     });
   }
 

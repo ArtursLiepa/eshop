@@ -1,82 +1,67 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Shop, Type } from '../../Interfaces/shop';
 import { Observable, of, map, find } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ShopService {
-  private shops: Shop[] = [
-    {
-      shopId: 1,
-      typeName: 'veikals',
-      id: 1,
-      Name: 'Banga',
-      Country: 'Latvia',
-      Region: 'Talsi',
-      City: 'Roja',
-      Code: 3162,
-    },
-    {
-      shopId: 1,
-      typeName: 'veikals',
-      id: 2,
-      Name: 'Mērsrags',
-      Country: 'Latvia',
-      Region: 'Talsi',
-      City: 'Mērsrags',
-      Code: 3182,
-    },
-    {
-      shopId: 1,
-      typeName: 'veikals',
-      id: 3,
-      Name: 'Valemārpils',
-      Country: 'Latvia',
-      Region: 'Talsi',
-      City: 'Roja',
-      Code: 3260,
-    },
-    {
-      shopId: 1,
-      typeName: 'e-veikals',
-      id: 3,
-      Name: 'Valemārpils',
-      Country: 'Latvia',
-      Region: 'Talsi',
-      City: 'Roja',
-      Code: 3260,
-    },
-  ];
-
-  private shopTypes: Type[] = [
-    { shopId: 1, typeName: 'e-veikals' },
-    { shopId: 2, typeName: 'veikals' },
-  ];
-
-  getshopTypes(): Observable<Type[]> {
-    return of(this.shopTypes);
-  }
-
-  shopList(Type: String): Observable<Shop[]> {
-    return of(this.shops).pipe(
-      map((items) =>
-        items.filter((item) => {
-          return item.typeName == Type;
-        })
-      )
-    );
-  }
-
-  getShopDetail(name: String): Observable<Shop> {
-    return of(this.shops).pipe(
-      map((items) =>
-        items.find((item) => {
-          return item.Name == name;
-        })
-      )
-    );
-  }
+  private url1 = 'http://localhost:3000/shoptypes';
+  private url2 = 'http://localhost:3000/veikals';
+  private http = inject(HttpClient);
 
   constructor() {}
+
+  private convertToShop(item: Shop): Shop {
+    return {
+      Country: item.Country,
+      Region: item.Region,
+      City: item.City,
+      stNumber: item.stNumber,
+      Code: item.Code,
+      id: item.id,
+      Name: item.Name,
+    };
+  }
+
+  getshopTypes(): Observable<Type[]> {
+    return this.http.get<Type[]>(this.url1).pipe(
+      map((items) =>
+        items.map((item) => {
+          return {
+            shopId: item.shopId,
+            typeName: item.typeName,
+          };
+        })
+      )
+    );
+  }
+
+  getShopList(): Observable<Shop[]> {
+    return this.http.get<Shop[]>(this.url2).pipe(
+      map((items) =>
+        items.map((item) => {
+          return this.convertToShop(item);
+        })
+      )
+    );
+  }
+
+  getShopDetail(id: number): Observable<Shop> {
+    return this.http.get<Shop>(`${this.url2}/${id}`).pipe(
+      map((item) => {
+        return {
+          Name: item.Name,
+          id: item.id,
+          Country: item.Country,
+          Region: item.Region,
+          City: item.City,
+          Street: item.Street,
+          stNumber: item.stNumber,
+          Code: item.Code,
+        };
+      })
+    );
+  }
 }

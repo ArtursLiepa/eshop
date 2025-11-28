@@ -1,15 +1,15 @@
 export interface Product extends Segment, Category {
-  productID: number;
+  id: number;
   productName: string;
   productPrice: number;
 }
 
 export interface Segment {
-  segmentID: Number;
-  segmentName: String;
+  segmentID: number;
+  segmentName: string;
 }
 
 export interface Category {
-  categoryID: Number;
-  categoryName: String;
+  categoryID: number;
+  categoryName: string;
 }

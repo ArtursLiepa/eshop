@@ -11,7 +11,7 @@ import { Subscription, Observable } from 'rxjs';
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent implements OnInit {
-  products$: Observable<Product[]>;
+  products$: Observable<Product[]> | undefined;
   productselected: boolean = false;
   segmentName: any;
 

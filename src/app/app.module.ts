@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { provideHttpClient } from '@angular/common/http';
+
+/*Components and custom modules*/
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,6 +15,8 @@ import { PromotionModule } from './modules/promotion/promotion.module';
 import { TimeDirective } from './directives/time/time.directive';
 import { CopyrightDirective } from './directives/copyright/copyright.directive';
 import { ShopsModule } from './modules/shops/shops.module';
+import { ConfigDirective } from './directives/config/config.directive';
+import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
   declarations: [
@@ -23,16 +27,18 @@ import { ShopsModule } from './modules/shops/shops.module';
     StartUpComponent,
     TimeDirective,
     CopyrightDirective,
+    ConfigDirective,
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     ProductsModule,
     OurServicesModule,
     PromotionModule,
     ShopsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

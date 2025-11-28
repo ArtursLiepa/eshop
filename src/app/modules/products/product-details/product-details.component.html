@@ -1,5 +1,29 @@
-<div class="productContainer">
-  <div class="idView">{{ product.productID }}</div>
-  <div class="nameView">{{ product.categoryName }}</div>
-  <div class="priceView">{{ product.productPrice | currency : "EUR" }}</div>
+<div class="productContainer" *ngIf="product$ | async as product">
+  <form class="itemView">
+    <div class="idView">
+      <div class="itemLabel">Produkta ID</div>
+      <div class="itemData">{{ product.id }}</div>
+    </div>
+    <div class="categoryView">
+      <div class="itemLabel">Produkta kategorija</div>
+      <div class="itemData">{{ product.categoryName }}</div>
+    </div>
+    <div class="priceView">
+      <div class="itemLabel">Produkta cena</div>
+      <div class="itemData">
+        {{ product.productPrice | currency : "EUR" }}
+      </div>
+    </div>
+
+    <div class="buttonView">
+      <button type="button" (click)="enableToEdit()">Edit</button>
+    </div>
+  </form>
+  <div *ngIf="enableModifyComponent">
+    <app-modify-detail
+      [id]="product.id"
+      [update]="enableModifyComponent"
+      (disableEditing)="disableToEdit()"
+    ></app-modify-detail>
+  </div>
 </div>

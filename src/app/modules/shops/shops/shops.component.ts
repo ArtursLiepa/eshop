@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrl: './shops.component.css',
 })
 export class ShopsComponent implements OnInit {
-  shopsTypes$: Observable<Type[]>;
+  shopsTypes$: Observable<Type[]> | undefined;
 
   constructor(private shopService: ShopService) {
     this.shopService = new ShopService();

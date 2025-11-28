@@ -1,0 +1,40 @@
+.loginForm {
+    background-color: brown;
+    border: 2px solid black;
+    background-color: rgb(197, 179, 179);
+    height: 60%;
+}
+
+.logInFormView {
+    display: grid;
+    grid-template-rows: 40% 40% 20%;
+
+
+}
+
+.formField {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.logInLabelView {
+    display: inline-block;
+    border: 1px solid black;
+
+}
+
+.logInInputView {
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.logInButtons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.logInButtons button {
+    background-color: cadetblue;
+    text-align: center;
+}

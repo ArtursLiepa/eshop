@@ -9,6 +9,9 @@
 .segmentlistcontainerTop {
     background-color: darkgreen;
     height: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    margin-top: 10px;
 }
 
 .segmenlistcontainerBottom {
@@ -35,4 +38,18 @@
     background-color: blue;
     outline: 3px solid red;
     outline-offset: 0px;
+}
+
+.addButton {
+    background-color: rgb(55, 116, 55);
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    width: 120px;
+    border: 1px solid red;
+    margin-left: 5px 5px;
+}
+
+.addButton:hover {
+    background-color: blue;
 }

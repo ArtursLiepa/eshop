@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Shop } from '../../../Interfaces/shop';
 import { ShopService } from '../shop.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shop-detail',
@@ -10,10 +10,9 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './shop-detail.component.html',
   styleUrl: './shop-detail.component.css',
 })
-export class ShopDetailComponent implements OnInit, OnDestroy {
-  shop: Shop;
-  shopName: String;
-  private productSub = new Subject<void>();
+export class ShopDetailComponent implements OnInit {
+  shop$: Observable<Shop> | undefined;
+  shopID: number | undefined;
 
   constructor(
     private service: ShopService,
@@ -24,21 +23,12 @@ export class ShopDetailComponent implements OnInit, OnDestroy {
 
   private getshop() {
     this.activatedRoute.paramMap.subscribe((id) => {
-      this.shopName = id.get('name');
-
-      this.service
-        .getShopDetail(this.shopName)
-        .pipe(takeUntil(this.productSub))
-        .subscribe((item) => (this.shop = item));
+      this.shopID = Number(id.get('id'));
+      this.shop$ = this.service.getShopDetail(this.shopID);
     });
   }
 
   ngOnInit(): void {
     this.getshop();
-  }
-
-  ngOnDestroy(): void {
-    this.productSub.next();
-    this.productSub.complete();
   }
 }
