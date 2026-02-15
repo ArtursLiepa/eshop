@@ -1,0 +1,18 @@
+<div class="segmentlistcontainer">
+  <div class="segmentlistcontainerTop">
+    <div>
+      <a
+        class="segmentItemLink"
+        *ngFor="let segment of segments$ | async"
+        [routerLink]="['./', segment.gardenthingSegmentName]"
+      >
+        <div class="segmentItem" routerLinkActive="segmentactive">
+          {{ segment.gardenthingSegmentName }}
+        </div></a
+      >
+    </div>
+  </div>
+  <div class="segmentlistcontainerBottom">
+    <router-outlet></router-outlet>
+  </div>
+</div>

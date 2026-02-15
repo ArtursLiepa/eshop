@@ -17,6 +17,7 @@ import { CopyrightDirective } from './directives/copyright/copyright.directive';
 import { ShopsModule } from './modules/shops/shops.module';
 import { ConfigDirective } from './directives/config/config.directive';
 import { LoginModule } from './modules/login/login.module';
+import { GardenthingsModule } from './modules/gardenthings/gardenthings.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { LoginModule } from './modules/login/login.module';
     BrowserModule,
     LoginModule,
     ProductsModule,
-    OurServicesModule,
+    GardenthingsModule,
     PromotionModule,
     ShopsModule,
     AppRoutingModule,

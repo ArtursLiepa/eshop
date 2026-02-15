@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  // constructor(public authService: AuthService) {
+
+  // }
+
+  maessage: string = 'Login worked';
+  style: string = 'color:#ef7c8e; font-size:22px; background:#fae8e0';
+
   login() {
-    console.log('You are trying to login mother fucker');
+    console.log(`%c${this.maessage}`, this.style);
   }
 
-  register() {
-    console.log('You are trying to register mother fucker');
+  logout() {
+    console.log('Logout worked');
   }
 }
