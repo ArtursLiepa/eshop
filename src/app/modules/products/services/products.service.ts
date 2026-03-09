@@ -12,9 +12,9 @@ export class ProductsService {
 
   private http = inject(HttpClient);
 
-  private categoryUrl = 'http://localhost:3000/Category';
-  private segmentUrl = 'http://localhost:3000/Segment';
-  private productUrl = 'http://localhost:3000/Products';
+  private categoryUrl = 'http://localhost:3000/categories';
+  private segmentUrl = 'http://localhost:3000/segments';
+  private productUrl = 'http://localhost:3000/products';
 
   getCategoryList(): Observable<Category[]> {
     // return of(this.categories);
@@ -25,8 +25,8 @@ export class ProductsService {
             categoryID: item.categoryID,
             categoryName: item.categoryName,
           };
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -38,8 +38,8 @@ export class ProductsService {
             segmentID: item.segmentID,
             segmentName: item.segmentName,
           };
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -53,8 +53,8 @@ export class ProductsService {
               segmentID: item.segmentID,
               segmentName: item.segmentName,
             };
-          })
-        )
+          }),
+        ),
       );
   }
 
@@ -69,12 +69,12 @@ export class ProductsService {
               categoryName: item.categoryName,
               segmentID: item.segmentID,
               segmentName: item.segmentName,
-              id: item.id,
+              productID: item.productID,
               productName: item.productName,
               productPrice: item.productPrice,
             };
-          })
-        )
+          }),
+        ),
       );
   }
 
@@ -84,7 +84,7 @@ export class ProductsService {
     return this.http.get<Product>(`${this.productUrl}/${id}`).pipe(
       map((item) => {
         return {
-          id: item.id,
+          productID: item.productID,
           productName: item.productName,
           productPrice: item.productPrice,
           categoryID: item.categoryID,
@@ -92,7 +92,7 @@ export class ProductsService {
           segmentID: item.segmentID,
           segmentName: item.segmentName,
         };
-      })
+      }),
     );
   }
 
@@ -103,7 +103,7 @@ export class ProductsService {
     newProductCategoryID: number,
     newProductCategoryName: string,
     newProductSegmentID: number,
-    newProductSegmentName: string
+    newProductSegmentName: string,
   ): Observable<Product> {
     return this.http
       .post<Product>(this.productUrl, {
@@ -118,7 +118,7 @@ export class ProductsService {
       .pipe(
         map((item) => {
           return {
-            id: item.id,
+            productID: item.productID,
             productName: item.productName,
             productPrice: item.productPrice,
             categoryID: item.categoryID,
@@ -126,7 +126,7 @@ export class ProductsService {
             segmentID: item.segmentID,
             segmentName: item.segmentName,
           };
-        })
+        }),
       );
   }
 

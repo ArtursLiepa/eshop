@@ -23,7 +23,7 @@ export class PromotionService {
       categoryName: 'Dogs',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 1,
+      productID: 1,
       productName: 'YorkSheer Adult',
       productPrice: 15,
     },
@@ -32,7 +32,7 @@ export class PromotionService {
       categoryName: 'Dogs',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 2,
+      productID: 2,
       productName: 'Hasky Junior',
       productPrice: 65,
     },
@@ -41,7 +41,7 @@ export class PromotionService {
       categoryName: 'Dogs',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 3,
+      productID: 3,
       productName: 'Hasky Adult',
       productPrice: 43,
     },
@@ -50,7 +50,7 @@ export class PromotionService {
       categoryName: 'Dogs',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 1,
+      productID: 1,
       productName: 'Lion Adult',
       productPrice: 15,
     },
@@ -59,7 +59,7 @@ export class PromotionService {
       categoryName: 'Dogs',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 2,
+      productID: 2,
       productName: 'Garfild Junior',
       productPrice: 65,
     },
@@ -68,7 +68,7 @@ export class PromotionService {
       categoryName: 'Cats',
       segmentID: 1,
       segmentName: 'Feed',
-      id: 3,
+      productID: 3,
       productName: 'Garfild Adult',
       productPrice: 43,
     },
@@ -77,7 +77,7 @@ export class PromotionService {
       categoryName: 'Rabbits',
       segmentID: 1,
       segmentName: 'Cage',
-      id: 5,
+      productID: 5,
       productName: 'North Atlantic specie',
       productPrice: 15,
     },
@@ -88,8 +88,8 @@ export class PromotionService {
       map((items) =>
         items.filter((item) => {
           return item.categoryName == category;
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -98,8 +98,8 @@ export class PromotionService {
       map((items) =>
         items.find((item) => {
           return item.productName == name;
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -108,8 +108,8 @@ export class PromotionService {
       map((items) =>
         items.filter((item) => {
           return item.categoryName;
-        })
-      )
+        }),
+      ),
     );
   }
 }

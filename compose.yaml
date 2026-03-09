@@ -1,11 +1,72 @@
 version: '3'
-services:
-    json-server:
-      image: json-server 
-      ports: 
-       - 3000:3000 
+# services:
+#     frontend:
+#       image: practice-routing:3.1
+#       ports:
+#         - 4200:4200
+#       depends_on:
+#         - mongo-server
+#         - json-server
 
-    web:
-      image: practicerouting:latest
-      ports:
-        - 4200:4200
+#     json-server:
+#       image: json-server:1.0
+#       ports: 
+#        - 3001:3001 
+#     mongo-server:
+#       image: data-api:1.1 
+#       ports: 
+#        - 3000:3000
+#       depends_on:
+#        - mongodb     
+#     mongodb:
+#       image: mongo:7.0.1
+#       ports:
+#         - 27017:27017
+      
+services:
+  frontend:
+    image: practice-routing:3.1
+    container_name: frontend
+    ports:
+      - "4200:4200"       # Access Angular from host browser at localhost:4200
+    depends_on:
+      - backend1
+    networks:
+      - appnet
+
+  backend1:
+    image: data-api:1.0
+    container_name: backend
+    ports:
+      - "3000:3000"       # Access backend API from host at localhost:3000
+    depends_on:
+      - mongodb    
+    networks:
+      - appnet
+  backend2:
+    image: json-server:1.0
+    container_name: backend2
+    ports:
+      - "3001:3001"       # Access backend API from host at localhost:3000
+    volumes:
+      - json-data:/app 
+    networks:
+      - appnet
+
+  mongodb:
+    image: mongo:7.0.1
+    container_name: mongodb
+    ports:
+      - "27017:27017"     # Expose Mongo to host (Compass, optional)
+    volumes:
+      - mongo_data:/data/db   # Persist data across container restarts
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  json-data:

@@ -7,8 +7,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ShopService {
-  private url1 = 'http://localhost:3000/shoptypes';
-  private url2 = 'http://localhost:3000/veikals';
+  private url1 = 'http://localhost:3001/shoptypes';
+  private url2 = 'http://localhost:3001/veikals';
+  // private url1 = 'http://json-server/shoptypes';
+  // private url2 = 'http://json-server/veikals';
+  // private url1 = 'http://db-service:3000/shoptypes';
+  // private url2 = 'http://db-service:3000/veikals';
   private http = inject(HttpClient);
 
   constructor() {}
@@ -33,8 +37,8 @@ export class ShopService {
             shopId: item.shopId,
             typeName: item.typeName,
           };
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -43,8 +47,8 @@ export class ShopService {
       map((items) =>
         items.map((item) => {
           return this.convertToShop(item);
-        })
-      )
+        }),
+      ),
     );
   }
 
@@ -61,7 +65,7 @@ export class ShopService {
           stNumber: item.stNumber,
           Code: item.Code,
         };
-      })
+      }),
     );
   }
 }

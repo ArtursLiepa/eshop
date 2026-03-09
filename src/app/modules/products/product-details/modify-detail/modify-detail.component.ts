@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './modify-detail.component.css',
 })
 export class ModifyDetailComponent implements OnInit {
-  @Input() id: number | undefined;
+  @Input() productID: number | undefined;
   @Input() update: boolean;
   @Output() disableEditing = new EventEmitter();
   @Output() productcreated = new EventEmitter<Product>();
@@ -31,7 +31,7 @@ export class ModifyDetailComponent implements OnInit {
   // imageUrl = 'src/assets/images/check.png';
 
   productForm = new FormGroup({
-    id: new FormControl<number | undefined>(undefined, {
+    productID: new FormControl<number | undefined>(undefined, {
       nonNullable: true,
       validators: [Validators.required, Validators.min(1)],
     }),
@@ -50,7 +50,7 @@ export class ModifyDetailComponent implements OnInit {
   });
 
   get newid() {
-    return this.productForm.controls.id;
+    return this.productForm.controls.productID;
   }
   get newName() {
     return this.productForm.controls.productName;
@@ -79,8 +79,8 @@ export class ModifyDetailComponent implements OnInit {
   }
 
   getproduct() {
-    if (this.id) {
-      this.product$ = this.service.getProduct(this.id);
+    if (this.productID) {
+      this.product$ = this.service.getProduct(this.productID);
     } else this.product$ = this.service.getProduct(this.defaultID);
   }
 
@@ -105,7 +105,7 @@ export class ModifyDetailComponent implements OnInit {
         Number(this.categoryid.value),
         this.categoryname.value,
         Number(this.segmentid.value),
-        this.segmentname.value
+        this.segmentname.value,
       )
       .subscribe((item) => (this.newproduct = item));
     this.productcreated.emit(this.newproduct);
