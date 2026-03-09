@@ -30,7 +30,7 @@
           <label for="price">Produkta cena</label>
         </div>
         <div class="itemData">
-          {{ product.productPrice | currency : "EUR" }}
+          {{ product.productPrice | currency: "EUR" }}
         </div>
         <div class="editDataInputView">
           <input placeholder="Cena" id="price" formControlName="productPrice" />
@@ -46,14 +46,14 @@
       <!--ProductID-->
       <div class="ediDataView">
         <div class="editItemLabel"><label for="id">ID</label></div>
-        <div class="itemData">{{ product.id }}</div>
+        <div class="itemData">{{ product.productID }}</div>
         <div class="editDataInputView">
           <input placeholder="ID" id="id" formControlName="id" required />
 
-          <div *ngIf="productForm.controls.id.dirty">
+          <div *ngIf="productForm.controls.productID.dirty">
             <img src="check1.png" alt="Hi" />
           </div>
-          <div *ngIf="productForm.controls.id.pristine">
+          <div *ngIf="productForm.controls.productID.pristine">
             <img src="redMark.png" alt="Hi" />
           </div>
         </div>

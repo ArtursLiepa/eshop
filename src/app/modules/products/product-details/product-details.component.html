@@ -2,7 +2,7 @@
   <form class="itemView">
     <div class="idView">
       <div class="itemLabel">Produkta ID</div>
-      <div class="itemData">{{ product.id }}</div>
+      <div class="itemData">{{ product.productID }}</div>
     </div>
     <div class="categoryView">
       <div class="itemLabel">Produkta kategorija</div>
@@ -11,7 +11,7 @@
     <div class="priceView">
       <div class="itemLabel">Produkta cena</div>
       <div class="itemData">
-        {{ product.productPrice | currency : "EUR" }}
+        {{ product.productPrice | currency: "EUR" }}
       </div>
     </div>
 
@@ -21,7 +21,7 @@
   </form>
   <div *ngIf="enableModifyComponent">
     <app-modify-detail
-      [id]="product.id"
+      [productID]="product.productID"
       [update]="enableModifyComponent"
       (disableEditing)="disableToEdit()"
     ></app-modify-detail>

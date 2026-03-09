@@ -1,5 +1,5 @@
 export interface Product extends Segment, Category {
-  id: number;
+  productID: number;
   productName: string;
   productPrice: number;
 }

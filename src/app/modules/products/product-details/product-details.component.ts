@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private productservice: ProductsService
+    private productservice: ProductsService,
   ) {
     this.productservice = new ProductsService();
   }
@@ -37,7 +37,7 @@ export class ProductDetailsComponent implements OnInit {
   }
   private getItem() {
     this.activeRoute.paramMap.subscribe((id) => {
-      this.productID = Number(id.get('id'));
+      this.productID = Number(id.get('productID'));
       this.product$ = this.productservice.getProduct(this.productID);
     });
   }
