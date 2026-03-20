@@ -1,0 +1,84 @@
+nav {
+    background-color: green;
+    height: 100%;
+    display: grid;
+    padding: 15px;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "time navigation";
+}
+
+time {
+    grid-area: time;
+    display: inline-flex;
+    align-content: center;
+}
+
+.navigation {
+    height: 100%;
+    grid-area: navigation;
+    display: grid;
+    /* height: 50px; */
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "search ul";
+}
+
+.dateView {
+    display: block;
+    margin: auto 5px;
+}
+
+.timeView {
+    display: block;
+    margin: auto 5px;
+}
+
+.search {
+    display: inline-flex;
+    height: 100%;
+    background-color: blueviolet;
+}
+
+ul {
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+ul li {
+    height: 100%;
+    width: 100px;
+    margin-right: 5px;
+    align-self: center;
+}
+
+li a {
+    height: 100%;
+    display: block;
+    text-align: center;
+    padding: 5px auto;
+    text-decoration: none;
+    background: rgb(61, 72, 94);
+    color: rgb(14, 13, 13);
+}
+
+li a:link {
+    background-color: rgb(68, 24, 51);
+}
+
+li a:active {
+    background-color: rgb(219, 19, 142);
+}
+
+li a:hover {
+    background-color: rgb(34, 34, 95);
+}
+
+li a:focus {
+    background-color: rgb(56, 153, 43);
+
+    /* outline-offset: 2px; */
+}

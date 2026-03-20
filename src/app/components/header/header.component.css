@@ -1,72 +1,121 @@
-.headerView {
-    background-color: rgb(94, 88, 88);
+header {
     height: 100%;
+    background-color: rgb(142, 167, 110);
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "headerLogoBlock headerBannerLoginBlock";
 }
 
-.informationView {
-    background-color: rgb(145, 133, 133);
-    display: grid;
-    grid-template-columns: 15% 85%;
-}
-
-.logoView {
-    background-color: darkgreen;
-    display: block;
-    height: 100%;
-
-}
-
-.navigationView {
+.headerLogoBlock {
+    grid-area: headerLogoBlock;
     background-color: inherit;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerLogoBlock img {
+    height: 100px;
+    width: auto;
+
+}
+
+.headerBannerLoginBlock {
+    grid-area: headerBannerLoginBlock;
     height: 100%;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    display: flex;
 }
 
-.dateView {
-    display: block;
-}
-
-.timeView {
-    display: inline;
-}
-
-.navigationView div {
-    background-color: inherit;
-    display: block;
-    position: relative;
+.bannerBlock {
     height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.navigationView div a {
-    background-color: rgb(161, 151, 151);
-    display: block;
+.loginBlock {
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    animation: loginIconIdle 1s infinite linear;
+}
+
+.loginIconClass img {
     border-radius: 50%;
-    height: 80%;
-    width: 90%;
-    margin: 2px;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    cursor: default;
+    height: 50px;
+    width: auto;
 }
 
+@keyframes loginIconIdle {
+    0% {
+        opacity: 100%;
+    }
 
-.navigationView div a:hover {
-    background-color: rgb(34, 34, 95);
+
+    25% {
+        opacity: 75%;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    75% {
+        opacity: 25%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+
 }
 
-
-
-.navigationView div a:focus {
-    background-color: blue;
-    outline: 2px solid black;
-    /* outline-offset: 2px; */
+.loginIconClass button {
+    cursor: pointer;
 }
 
-/*  */
-.topright {
-    display: grid;
-    grid-template-columns: 80% 20%;
+.loginBlock:hover {
+    animation: loginIconFreeze 20s infinite linear;
+
+}
+
+@keyframes loginIconFreeze {
+    0% {
+        opacity: 100%;
+    }
+
+
+    25% {
+        opacity: 75%;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    75% {
+        opacity: 25%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+
+}
+
+.loginContainer {
+    position: fixed;
+    top: 25vh;
+    left: 40vw;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

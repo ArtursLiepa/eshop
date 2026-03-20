@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -11,6 +11,11 @@ export class LoginComponent {
   // constructor(public authService: AuthService) {
 
   // }
+  @Output() loginExit = new EventEmitter();
+
+  closeloginForm() {
+    this.loginExit.emit();
+  }
 
   maessage: string = 'Login worked';
   style: string = 'color:#ef7c8e; font-size:22px; background:#fae8e0';

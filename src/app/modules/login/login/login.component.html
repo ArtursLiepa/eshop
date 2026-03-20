@@ -1,20 +1,38 @@
-<div class="loginForm">
-  <form class="logInFormView">
-    <div class="formField">
-      <div class="logInLabelView"><label for="username">Username</label></div>
-      <div class="logInInputView">
-        <input type="text" name="username" placeholder="Username" />
-      </div>
+<!-- <div class="testBlock">LoginBlock</div> -->
+<div class="loginBlock">
+  <div class="loginInformationBlock">
+    <h2>Login Form</h2>
+    <button type="button" class="closeButton" (click)="closeloginForm()">
+      X
+    </button>
+  </div>
+
+  <form class="logInFormBlock">
+    <div class="usernameBlock">
+      <label class="inputLabel" for="username">Username</label>
+      <input
+        class="textInput"
+        id="username"
+        type="text"
+        placeholder="username"
+      />
     </div>
-    <div class="formField">
-      <div class="logInLabelView"><label for="password">Password</label></div>
-      <div class="logInInputView">
-        <input type="password" name="password" placeholder="Password" />
-      </div>
+
+    <div class="passwordBlock">
+      <label class="inputLabel" for="password">Password</label>
+      <input
+        class="textInput"
+        id="password"
+        type="password"
+        placeholder="password"
+      />
     </div>
-    <div class="logInButtons">
-      <button type="button" (click)="login()">Login</button>
-      <button type="button" (click)="logout()">LogOut</button>
+
+    <div class="buttonsBlock">
+      <button type="submit">Enter</button>
+      <!-- <button type="button">Exit</button>
+      <button type="button">Register</button>
+      <a href="">Forget password</a> -->
     </div>
   </form>
 </div>

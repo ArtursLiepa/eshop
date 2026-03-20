@@ -1,40 +1,102 @@
-.loginForm {
-    background-color: brown;
-    border: 2px solid black;
-    background-color: rgb(197, 179, 179);
-    height: 60%;
-}
+.loginBlock {
 
-.logInFormView {
+    background-color: rgb(118, 126, 112);
     display: grid;
-    grid-template-rows: 40% 40% 20%;
-
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "loginInformationBlock" "logInFormBlock";
 
 }
 
-.formField {
+.loginInformationBlock {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(118, 126, 112);
+    align-items: center;
+    position: relative;
+
+}
+
+.loginInformationBlock h2 {
+    font-size: 32px;
+}
+
+.loginInformationBlock button {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.loginInformationBlock button:hover {
+    cursor: pointer;
+    background-color: rgb(104, 109, 100);
+    font-size: 20px;
+    text-decoration: solid;
+}
+
+.logInFormBlock {
+    background-color: inherit;
+    grid-area: logInFormBlock;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "usernameBlock" "passwordBlock" "buttonsBlock";
+    padding: 5px;
 }
 
-.logInLabelView {
-    display: inline-block;
-    border: 1px solid black;
-
-}
-
-.logInInputView {
-    display: inline-block;
-    border: 1px solid black;
-}
-
-.logInButtons {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.usernameBlock {
+    height: fit-content;
+    grid-area: usernameBlock;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px black solid; */
 
 }
 
-.logInButtons button {
-    background-color: cadetblue;
-    text-align: center;
+.passwordBlock {
+    height: fit-content;
+    grid-area: passwordBlock;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 2px black solid; */
+}
+
+.buttonsBlock {
+    height: fit-content;
+    grid-area: buttonsBlock;
+    display: flex;
+    /* background-color: rgb(171, 224, 191); */
+}
+
+.buttonsBlock button {
+    height: fit-content;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 2px black solid;
+    background-color: rgb(29, 73, 46);
+    border-radius: 18px;
+
+}
+
+.inputLabel {
+    display: flex;
+    flex: 0 0 45px;
+    padding-left: 5px;
+    border-radius: 18px;
+}
+
+.textInput {
+    display: inline-flex;
+    flex: 1 1 auto;
+    margin: 5px;
+    background-color: rgb(147, 150, 144);
 }

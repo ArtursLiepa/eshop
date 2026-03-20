@@ -18,6 +18,7 @@ import { ShopsModule } from './modules/shops/shops.module';
 import { ConfigDirective } from './directives/config/config.directive';
 import { LoginModule } from './modules/login/login.module';
 import { GardenthingsModule } from './modules/gardenthings/gardenthings.module';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { GardenthingsModule } from './modules/gardenthings/gardenthings.module';
     TimeDirective,
     CopyrightDirective,
     ConfigDirective,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

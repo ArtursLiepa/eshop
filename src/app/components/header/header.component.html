@@ -1,29 +1,28 @@
-<div class="headerView">
-  <div class="informationView">
-    <div class="logoView">
-      <div>Logo</div>
+<header>
+  <!-- <div class="informationView"> -->
+  <div class="headerLogoBlock">
+    <img src="" alt="Place for logo" />
+  </div>
+  <div class="headerBannerLoginBlock">
+    <div class="bannerBlock">
+      <section>
+        <article>
+          <h1>25% Off all prodcuts</h1>
+        </article>
+      </section>
     </div>
-    <div class="topright">
-      <div>Banner</div>
-      <div>
-        <app-login></app-login>
+    <div class="loginBlock">
+      <div class="loginIconClass">
+        <button type="button" (click)="enableLoginModule()">
+          <img src="login1.png" alt="" />
+        </button>
+        <!-- <a (click)="activateLoginModule()"><img src="login1.png" alt="" /></a> -->
       </div>
+
+      <!-- <app-login></app-login> -->
     </div>
   </div>
-  <div class="navigationView">
-    <div class="dateView">{{ date | date }}</div>
-    <div class="timeView">{{ Hours }} : {{ Minutes }} : {{ Seconds }}</div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div>
-      <a routerLink="/products">Products</a>
-    </div>
-    <div><a routerLink="/services">Services</a></div>
-    <div>
-      <a routerLink="/promotion">Promotions</a>
-    </div>
-    <div><a routerLink="/shops">Shops</a></div>
-    <div><a routerLink="/gardenThings">Dārza preces</a></div>
+  <div class="loginContainer" *ngIf="loginModuleActivated">
+    <app-login (loginExit)="disableLoginModule()"></app-login>
   </div>
-</div>
+</header>
