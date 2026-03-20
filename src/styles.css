@@ -2,11 +2,14 @@
 
 @theme {}
 
-body {
-    box-sizing: border-box;
-    background-color: coral;
+* {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
 }
 
 .active {
@@ -15,22 +18,35 @@ body {
 
 /* Global styles */
 
-.contentView {
-    background-color: darkgreen;
+.mainconteiner {
+    min-height: 100%;
     display: grid;
-    height: 100%;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas: "contentCategories contentListView";
 }
 
 .contentCategories {
+    grid-area: contentCategories;
     background-color: darkgray;
-    height: 100%;
+    border: 1px black solid;
+
+
+
 }
 
 .contentListView {
+    grid-area: contentListView;
     background-color: blueviolet;
-    height: 100%;
+    border: 1px black solid;
 
+
+}
+
+.categoryItem a {
+    text-decoration: none;
+    max-height: fit-content;
+    margin-top: auto;
+    border: 1px black solid;
 }
 
 .productlistcontainer {

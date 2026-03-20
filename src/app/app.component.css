@@ -1,12 +1,7 @@
 .mainView {
-    background-color: blue;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 20% 70% 10%;
-}
-
-.contentView {
-    background-color: darkgoldenrod;
-    height: 100%;
+    min-height: 100vh;
     display: block;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 1fr auto;
 }
