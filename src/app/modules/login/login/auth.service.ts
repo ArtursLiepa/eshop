@@ -7,21 +7,24 @@ import { inject } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  token: string = '';
+  private token = '';
 
-  authURL = 'http://localhost:3000/auth';
+  authURL = 'http://localhost:3000/auth/login';
 
   private http = inject(HttpClient);
 
-  // login(): Observable<string> {
-  //   return this.http
-  //     .post<string>(this.authURL, { username: 'Kārlis', password: '987654321' })
-  //     .pipe(tap((token) => (this.token = token)));
-  // }
-
-  login() {
-    console.log('Worked!');
+  login(): Observable<string> {
+    return this.http
+      .post<string>(this.authURL, {
+        username: 'ivarsgaiss',
+        password: '12345',
+      })
+      .pipe(tap((token) => (this.token = token)));
   }
+
+  // login() {
+  //   console.log('Worked!');
+  // }
 
   logout() {
     console.log('Logout method worked!');
@@ -30,5 +33,9 @@ export class AuthService {
 
   get isLoggedIn() {
     return this.token !== '';
+  }
+
+  get isLoggedOut() {
+    return this.token === '';
   }
 }

@@ -29,7 +29,9 @@
     </div>
 
     <div class="buttonsBlock">
-      <button type="submit">Enter</button>
+      <button type="button" (click)="authService.login().subscribe()">
+        Enter
+      </button>
       <!-- <button type="button">Exit</button>
       <button type="button">Register</button>
       <a href="">Forget password</a> -->
