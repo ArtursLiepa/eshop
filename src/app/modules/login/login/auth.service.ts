@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, map } from 'rxjs';
 import { inject } from '@angular/core';
+import { AuthResponse } from '../../../Interfaces/authentication';
 
 @Injectable({
   providedIn: 'root',
@@ -13,11 +14,11 @@ export class AuthService {
 
   private http = inject(HttpClient);
 
-  login(): Observable<string> {
+  authenticate(username: string, password: string): Observable<string> {
     return this.http
       .post<string>(this.authURL, {
-        username: 'ivarsgaiss',
-        password: '12345',
+        username,
+        password,
       })
       .pipe(tap((token) => (this.token = token)));
   }

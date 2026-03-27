@@ -13,20 +13,18 @@ export class HeaderComponent implements OnInit {
 
   constructor(public authService: AuthService) {}
 
-  enableLoginModule() {
+  activateLogInForm() {
     this.loginModuleActivated = true;
   }
 
-  disableLoginModule() {
+  deactivateLogInForm() {
     this.loginModuleActivated = false;
     this.authService.logout();
   }
 
-  // userloggedin() {
-  //   if (this.authService.isLoggedIn) {
-
-  //   }
-  // }
+  disableLoginModule() {
+    this.loginModuleActivated = false;
+  }
 
   ngOnInit(): void {}
 }

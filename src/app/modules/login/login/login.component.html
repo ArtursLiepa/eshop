@@ -7,7 +7,7 @@
     </button>
   </div>
 
-  <form class="logInFormBlock">
+  <form [formGroup]="authForm" class="logInFormBlock">
     <div class="usernameBlock">
       <label class="inputLabel" for="username">Username</label>
       <input
@@ -15,6 +15,7 @@
         id="username"
         type="text"
         placeholder="username"
+        formControlName="username"
       />
     </div>
 
@@ -25,13 +26,12 @@
         id="password"
         type="password"
         placeholder="password"
+        formControlName="password"
       />
     </div>
 
     <div class="buttonsBlock">
-      <button type="button" (click)="authService.login().subscribe()">
-        Enter
-      </button>
+      <button type="button" (click)="login()">Enter</button>
       <!-- <button type="button">Exit</button>
       <button type="button">Register</button>
       <a href="">Forget password</a> -->
