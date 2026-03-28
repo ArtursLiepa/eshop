@@ -1,12 +1,14 @@
 <nav>
   <time datetime="">
     <div class="dateView">{{ date | date }}</div>
-    <div class="timeView">{{ Hours }} : {{ Minutes }} : {{ Seconds }}</div>
+    <div class="timeView">
+      Plkst. {{ Hours }} : {{ Minutes }} : {{ Seconds }}
+    </div>
   </time>
   <div class="navigation">
     <div class="search">
-      <img src="" alt="" />
-      <input type="text" />
+      <!-- <img src="search.jpg" alt="" /> -->
+      <input type="text" placeholder="Enter text" />
     </div>
     <ul>
       <li><a routerLink="/products">Products</a></li>

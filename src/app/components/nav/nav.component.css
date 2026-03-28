@@ -1,42 +1,71 @@
 nav {
-    background-color: green;
+    background-color: rgb(110, 119, 101);
     height: 100%;
+    align-self: center;
     display: grid;
     padding: 15px;
     grid-template-columns: 200px 1fr;
     grid-template-areas: "time navigation";
+    box-shadow: 0px -20px 15px rgba(45, 48, 48, 0.5);
 }
 
 time {
     grid-area: time;
-    display: inline-flex;
-    align-content: center;
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: left;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dateView {
+    display: block;
+}
+
+.timeView {
+    display: block;
 }
 
 .navigation {
     height: 100%;
     grid-area: navigation;
     display: grid;
-    /* height: 50px; */
     grid-template-columns: 1fr auto;
     grid-template-areas: "search ul";
 }
 
-.dateView {
-    display: block;
-    margin: auto 5px;
-}
-
-.timeView {
-    display: block;
-    margin: auto 5px;
-}
-
 .search {
-    display: inline-flex;
+    display: flex;
+    border-radius: 6px;
     height: 100%;
-    background-color: blueviolet;
+    background-color: rgba(71, 79, 87, 0.4);
+    box-shadow: 0px 5px 15px rgba(71, 79, 87, 0.9);
+
 }
+
+.search input {
+    flex: 1;
+    border-radius: 4px;
+    height: 100%;
+    text-align: center;
+    opacity: 0.4;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.search:hover {
+    background-color: rgba(18, 41, 15, 0.4);
+    box-shadow: 0px 5px 15px black;
+}
+
+.search input:focus {
+    background-color: rgb(74, 80, 73);
+    box-shadow: 0px 5px 15px black;
+    /* border: 2px black solid; */
+    outline: none;
+}
+
+
 
 ul {
     height: 100%;
@@ -44,25 +73,28 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 ul li {
     height: 100%;
     width: 100px;
-    margin-right: 5px;
-    align-self: center;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+
 }
 
 li a {
     height: 100%;
-    display: block;
-    text-align: center;
-    padding: 5px auto;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px;
     text-decoration: none;
-    background: rgb(61, 72, 94);
+    background-color: rgba(110, 119, 101, 0.1);
     color: rgb(14, 13, 13);
+
 }
 
 li a:link {
@@ -74,11 +106,13 @@ li a:active {
 }
 
 li a:hover {
-    background-color: rgb(34, 34, 95);
+    background-color: rgba(18, 41, 15, 0.4);
+    box-shadow: 0px 5px 15px black;
 }
 
 li a:focus {
-    background-color: rgb(56, 153, 43);
+    background-color: rgb(74, 80, 73);
+    box-shadow: 0px 5px 15px black;
 
     /* outline-offset: 2px; */
 }
