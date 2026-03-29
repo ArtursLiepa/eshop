@@ -5,7 +5,7 @@ import { StartUpComponent } from './components/start-up/start-up.component';
 import { LoginComponent } from './modules/login/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, outlet: 'login' },
+  { path: 'login', component: LoginComponent },
   {
     path: 'services',
     loadChildren: () =>

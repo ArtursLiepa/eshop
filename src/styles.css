@@ -9,7 +9,7 @@
 }
 
 body {
-    height: 100%;
+    height: 100vh;
 }
 
 .active {
@@ -29,17 +29,12 @@ body {
     grid-area: contentCategories;
     background-color: darkgray;
     border: 1px black solid;
-
-
-
 }
 
 .contentListView {
     grid-area: contentListView;
     background-color: blueviolet;
     border: 1px black solid;
-
-
 }
 
 .categoryItem a {
@@ -76,8 +71,6 @@ body {
     height: 100%;
     display: grid;
     grid-template-rows: 20% 40% 40%;
-
-
 }
 
 .idView {
