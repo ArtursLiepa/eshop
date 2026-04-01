@@ -1,6 +1,6 @@
 <div class="mainView">
-  <app-header></app-header>
-  <app-nav></app-nav>
+  <app-header (authStatus)="changeAuthStatus($event)"></app-header>
+  <app-nav [access]="accessStatus"></app-nav>
   <main>
     <router-outlet></router-outlet>
   </main>

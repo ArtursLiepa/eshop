@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { jwtDecode } from 'jwt-decode';
 import { AuthResponse } from '../../../Interfaces/authentication';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,6 @@ export class LoginComponent implements OnInit {
   token: string = '';
 
   @Output() loginExit = new EventEmitter<boolean>();
-  @Output() userLogeIn = new EventEmitter();
 
   constructor(public authService: AuthService) {}
 
