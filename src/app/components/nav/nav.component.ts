@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../modules/login/login/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,11 +14,16 @@ import { Observable } from 'rxjs';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnChanges {
   date = new Date();
   Hours: any;
   Minutes: any;
   Seconds: any;
+  isDisabled: boolean = true;
+
+  @Input() access: boolean;
+
+  constructor(public authservice: AuthService) {}
 
   localTimeHours = new Observable((observer) => {
     setInterval(() => {
@@ -52,5 +64,17 @@ export class NavComponent implements OnInit {
     this.getlocalTimeHours();
     this.getlocalTimeMinutes();
     this.getlocalTimeSeconds();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const logged = changes['access'];
+    console.log(`Nav component AccountGrantAccess ${this.isDisabled}`);
+    if (logged.currentValue === true) {
+      this.isDisabled = false;
+      console.log(`Nav component AccountGrantAccess ${this.isDisabled}`);
+    } else if (logged.currentValue === false) {
+      this.isDisabled = true;
+      console.log(`Nav component AccountGrantAccess ${this.isDisabled}`);
+    }
   }
 }

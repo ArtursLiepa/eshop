@@ -13,9 +13,11 @@
     <ul>
       <li><a routerLink="/products">Products</a></li>
       <li><a routerLink="/services">Services</a></li>
-      <li><a routerLink="/promotion">Promotions</a></li>
       <li><a routerLink="/shops">Shops</a></li>
-      <li><a routerLink="/gardenThings">Dārza preces</a></li>
+      <li><a routerLink="/aboutUs">About Us</a></li>
+      <li [class.unpressable]="isDisabled">
+        <a routerLink="/account">Account</a>
+      </li>
     </ul>
   </div>
 </nav>

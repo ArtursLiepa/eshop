@@ -9,7 +9,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: '',
     component: ProductsComponent,
     // loadComponent: () =>
     //   import('./products/products.component').then((m) => m.ProductsComponent),

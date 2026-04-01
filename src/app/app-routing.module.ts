@@ -2,10 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StartUpComponent } from './components/start-up/start-up.component';
-import { LoginComponent } from './modules/login/login/login.component';
+import { succesGuard } from '../Guards/succes.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./modules/account/account.module').then((m) => m.AccountModule),
+    canMatch: [succesGuard],
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./modules/products/products.module').then(
+        (m) => m.ProductsModule,
+      ),
+  },
   {
     path: 'services',
     loadChildren: () =>
