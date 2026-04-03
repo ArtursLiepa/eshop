@@ -15,9 +15,15 @@
       <li><a routerLink="/services">Services</a></li>
       <li><a routerLink="/shops">Shops</a></li>
       <li><a routerLink="/aboutUs">About Us</a></li>
-      <li [class.unpressable]="isDisabled">
+      <li
+        [class.unpressable]="isDisabled"
+        *ngIf="authservice.isLoggedIn; else register"
+      >
         <a routerLink="/account">Account</a>
       </li>
+      <ng-template #register>
+        <li><a routerLink="/register">Register</a></li>
+      </ng-template>
     </ul>
   </div>
 </nav>
