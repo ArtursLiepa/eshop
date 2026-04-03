@@ -1,1 +1,24 @@
-<p>account works!</p>
+<div class="productContainer" *ngIf="user$ | async as user">
+  <form class="itemView">
+    <div class="idView">
+      <div class="itemLabel">Lietotāja vārds</div>
+      <div class="itemData">{{ user.name }}</div>
+    </div>
+    <div class="categoryView">
+      <div class="itemLabel">Lietotāja uzvārds</div>
+      <div class="itemData">{{ user.surname }}</div>
+    </div>
+    <div class="categoryView">
+      <div class="itemLabel">Lietotāja vecums</div>
+      <div class="itemData">{{ user.age }}</div>
+    </div>
+    <div class="categoryView">
+      <div class="itemLabel">Lietotāja e-pasts</div>
+      <div class="itemData">{{ user.email }}</div>
+    </div>
+    <div class="categoryView">
+      <div class="itemLabel">Lietotājvārds</div>
+      <div class="itemData">{{ user.username }}</div>
+    </div>
+  </form>
+</div>

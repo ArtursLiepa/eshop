@@ -7,7 +7,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-// import { ProductsModule } from './modules/products/products.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { StartUpComponent } from './components/start-up/start-up.component';
 import { OurServicesModule } from './modules/our-services/our-services.module';
@@ -35,7 +34,6 @@ import { NavComponent } from './components/nav/nav.component';
   imports: [
     BrowserModule,
     LoginModule,
-    // ProductsModule,
     GardenthingsModule,
     PromotionModule,
     ShopsModule,

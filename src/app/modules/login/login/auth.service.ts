@@ -16,11 +16,14 @@ export class AuthService {
 
   authenticate(username: string, password: string): Observable<string> {
     return this.http
-      .post<string>(this.authURL, {
+      .post<AuthResponse>(this.authURL, {
         username,
         password,
       })
-      .pipe(tap((token) => (this.token = token)));
+      .pipe(
+        tap((data) => (this.token = data.token)),
+        map((data) => data.token),
+      );
   }
 
   // login() {
@@ -38,5 +41,9 @@ export class AuthService {
 
   get isLoggedOut() {
     return this.token === '';
+  }
+
+  get tokenA() {
+    return this.token;
   }
 }
