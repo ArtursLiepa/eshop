@@ -1,17 +1,48 @@
-/* .productView {
-    background-color: darkgreen;
-    display: grid;
+ul {
     height: 100%;
-    grid-template-columns: 20% 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.5); */
+
 }
 
-.productCategories {
-    background-color: darkgray;
-    height: 100%;
+ul li {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+
 }
 
-.productListView {
-    background-color: blueviolet;
+li a {
     height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: rgb(175, 184, 174);
+    color: rgb(14, 13, 13);
+}
 
+
+li a:link {
+    background-color: rgb(68, 24, 51);
+}
+
+li a:active {
+    background-color: rgb(219, 19, 142);
+}
+
+li a:hover {
+    background-color: rgba(25, 75, 17, 0.4);
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.5), 5px 0px 5px rgba(0, 0, 0, 0.5), 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* li a:focus {
+    box-shadow: -5px 0px 5px rgba(25, 75, 17, 1), 5px 0px 5px rgba(0, 0, 0, 0.5), 0px 2px 5px rgba(25, 75, 17, 1);
 } */

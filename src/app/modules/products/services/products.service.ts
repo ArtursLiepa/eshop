@@ -37,6 +37,7 @@ export class ProductsService {
           return {
             segmentID: item.segmentID,
             segmentName: item.segmentName,
+            segmentImage: item.segmentImage,
           };
         }),
       ),
@@ -52,6 +53,7 @@ export class ProductsService {
             return {
               segmentID: item.segmentID,
               segmentName: item.segmentName,
+              segmentImage: item.segmentImage,
             };
           }),
         ),
@@ -69,6 +71,7 @@ export class ProductsService {
               categoryName: item.categoryName,
               segmentID: item.segmentID,
               segmentName: item.segmentName,
+              segmentImage: item.segmentImage,
               productID: item.productID,
               productName: item.productName,
               productPrice: item.productPrice,
@@ -91,6 +94,7 @@ export class ProductsService {
           categoryName: item.categoryName,
           segmentID: item.segmentID,
           segmentName: item.segmentName,
+          segmentImage: item.segmentImage,
         };
       }),
     );

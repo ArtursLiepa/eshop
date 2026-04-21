@@ -1,0 +1,9 @@
+.shopsMap {
+    height: 500px;
+    width: 100%;
+    background-image: url("../../../../assets/images/map.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}

@@ -17,15 +17,11 @@ const routes: Routes = [
       {
         path: ':category',
         component: ProductSegmentComponent,
-        children: [
-          {
-            path: ':segment',
-            component: ProductListComponent,
-            children: [
-              { path: ':productID', component: ProductDetailsComponent },
-            ],
-          },
-        ],
+      },
+      {
+        path: ':category/:segment',
+        component: ProductListComponent,
+        children: [{ path: ':productID', component: ProductDetailsComponent }],
       },
     ],
   },

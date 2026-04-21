@@ -22,7 +22,7 @@ header {
     width: auto;
     object-fit: cover;
     aspect-ratio: 1/1;
-    box-shadow: 0px -5px -15px rgb(98, 112, 80);
+    /* box-shadow: inset 0px 0px -5px -15px rgb(240, 241, 238); */
 
 
 }
