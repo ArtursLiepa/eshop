@@ -17,9 +17,12 @@ export class ProductSegmentComponent implements OnInit {
 
   constructor(
     private segmentService: ProductsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) {
     this.segmentService = new ProductsService();
+  }
+  getBg(image: string): string {
+    return `url('segments/${image}')`;
   }
 
   addItem() {

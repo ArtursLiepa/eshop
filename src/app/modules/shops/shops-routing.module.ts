@@ -8,13 +8,13 @@ const routes: Routes = [
   {
     path: 'shops',
     component: ShopsComponent,
-    children: [
-      {
-        path: ':typeName',
-        component: ShopsListComponent,
-        children: [{ path: ':id', component: ShopDetailComponent }],
-      },
-    ],
+    // children: [
+    //   {
+    //     path: ':typeName',
+    //     component: ShopsListComponent,
+    //     children: [{ path: ':id', component: ShopDetailComponent }],
+    //   },
+    // ],
   },
 ];
 

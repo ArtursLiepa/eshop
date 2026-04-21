@@ -7,6 +7,7 @@ export interface Product extends Segment, Category {
 export interface Segment {
   segmentID: number;
   segmentName: string;
+  segmentImage?: string;
 }
 
 export interface Category {

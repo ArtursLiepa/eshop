@@ -7,6 +7,7 @@ import { ShopsComponent } from './shops/shops.component';
 import { ShopsListComponent } from './shops-list/shops-list.component';
 import { EshopDetailComponent } from './eshop-detail/eshop-detail.component';
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
+import { MapModule } from '../map/map.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ShopDetailComponent } from './shop-detail/shop-detail.component';
     EshopDetailComponent,
     ShopDetailComponent,
   ],
-  imports: [CommonModule, ShopsRoutingModule],
+  imports: [CommonModule, MapModule, ShopsRoutingModule],
   providers: [provideHttpClient()],
   exports: [ShopsComponent],
 })

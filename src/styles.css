@@ -12,8 +12,9 @@ body {
     height: 100vh;
 }
 
-.active {
-    background-color: rgb(8, 8, 129);
+.navActive {
+    transform: translateY(-10px);
+    box-shadow: inset 0px -5px 15px rgba(25, 75, 17, 1);
 }
 
 /* Global styles */
@@ -21,20 +22,24 @@ body {
 .mainconteiner {
     min-height: 100%;
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 200px 1fr;
     grid-template-areas: "contentCategories contentListView";
 }
 
 .contentCategories {
+    width: 100%;
     grid-area: contentCategories;
-    background-color: darkgray;
-    border: 1px black solid;
+    /* background-color: rgb(249, 250, 248); */
+}
+
+.categoryList {
+    box-shadow: -5px 0px 5px rgba(25, 75, 17, 1), 5px 0px 5px rgba(0, 0, 0, 0.5), 0px 2px 5px rgba(25, 75, 17, 1);
 }
 
 .contentListView {
     grid-area: contentListView;
     background-color: blueviolet;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 
 .categoryItem a {

@@ -1,10 +1,10 @@
 <div class="mainconteiner">
   <div class="contentCategories">
     <ul>
-      <li class="categoryItem" *ngFor="let category of categories$ | async">
+      <li *ngFor="let category of categories$ | async">
         <a
+          routerLinkActive="categoryList"
           [routerLink]="['./', category.categoryName]"
-          routerLinkActive="active"
           >{{ category.categoryName }}
         </a>
       </li>

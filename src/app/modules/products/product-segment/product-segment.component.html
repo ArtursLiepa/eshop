@@ -1,4 +1,19 @@
-<div class="segmentlistcontainer">
+<section class="segmentSection">
+  <div class="segmentView" *ngFor="let segment of segments$ | async">
+    <a class="segmentRoute" [routerLink]="['./', segment.segmentName]">
+      <article>{{ segment.segmentName }}</article>
+      <div
+        class="segmentImage"
+        [style.background-image]="getBg(segment.segmentImage)"
+      ></div>
+    </a>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
+
+<!-- Old version of segment list-->
+<!-- <div class="segmentlistcontainer">
   <div class="segmentlistcontainerTop">
     <div>
       <a
@@ -18,16 +33,18 @@
     </div>
     <div *ngIf="addItemenabled">
       <app-modify-detail (disableEditing)="disableToEdit()"></app-modify-detail>
-    </div>
+    </div> -->
 
-    <!-- <div class="segmentItem" *ngFor="let segment of segments$ | async">
+<!-- Not used part of component-->
+
+<!-- <div class="segmentItem" *ngFor="let segment of segments$ | async">
       <a
         [routerLink]="['./', segment.segmentName]"
         routerLinkActive="Productsactive"
         >{{ segment.segmentName }}</a
       >
     </div> -->
-    <!-- <ul>
+<!-- <ul>
       <li *ngFor="let segment of segments$ | async">
         <a
           [routerLink]="['./', segment.segmentName]"
@@ -36,8 +53,10 @@
         >
       </li>
     </ul> -->
-  </div>
+
+<!-- Not used part of component-->
+<!-- </div>
   <div class="segmentlistcontainerBottom">
     <router-outlet></router-outlet>
   </div>
-</div>
+</div> -->
