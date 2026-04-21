@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { provideHttpClient } from '@angular/common/http';
+/*Interceptors*/
+import { authInterceptor } from './core/Interceptors/auth.interceptor';
 
 /*Components and custom modules*/
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { ConfigDirective } from './directives/config/config.directive';
 import { LoginModule } from './modules/login/login.module';
 import { GardenthingsModule } from './modules/gardenthings/gardenthings.module';
 import { NavComponent } from './components/nav/nav.component';
+import { RegisterModule } from './modules/register/register.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { NavComponent } from './components/nav/nav.component';
   imports: [
     BrowserModule,
     LoginModule,
+    RegisterModule,
     GardenthingsModule,
     PromotionModule,
     ShopsModule,

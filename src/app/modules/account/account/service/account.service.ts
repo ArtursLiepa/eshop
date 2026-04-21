@@ -31,6 +31,8 @@ export class AccountService {
           email: item.email,
           username: item.username,
           password: item.password,
+          createdAt: item.createdAt,
+          updatedAt: item.updatedAt,
         };
       }),
     );

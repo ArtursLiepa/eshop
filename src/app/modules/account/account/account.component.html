@@ -1,24 +1,66 @@
-<div class="productContainer" *ngIf="user$ | async as user">
-  <form class="itemView">
-    <div class="idView">
-      <div class="itemLabel">Lietotāja vārds</div>
-      <div class="itemData">{{ user.name }}</div>
-    </div>
-    <div class="categoryView">
-      <div class="itemLabel">Lietotāja uzvārds</div>
-      <div class="itemData">{{ user.surname }}</div>
-    </div>
-    <div class="categoryView">
-      <div class="itemLabel">Lietotāja vecums</div>
-      <div class="itemData">{{ user.age }}</div>
-    </div>
-    <div class="categoryView">
-      <div class="itemLabel">Lietotāja e-pasts</div>
-      <div class="itemData">{{ user.email }}</div>
-    </div>
-    <div class="categoryView">
-      <div class="itemLabel">Lietotājvārds</div>
-      <div class="itemData">{{ user.username }}</div>
-    </div>
-  </form>
-</div>
+<section *ngIf="user$ | async as user">
+  <div>
+    <h1>Account information</h1>
+  </div>
+  <div>
+    <form>
+      <fieldset>
+        <legend>Personal information</legend>
+        <div class="dataView">
+          <div class="dataLabel">Lietotāja vārds</div>
+          <div class="dataValue">{{ user.name }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Lietotāja uzvārds</div>
+          <div>{{ user.surname }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Lietotāja vecums</div>
+          <div>{{ user.age }}</div>
+        </div>
+      </fieldset>
+      <fieldset cdkDrag>
+        <legend>Account information</legend>
+        <div class="dataView">
+          <div class="dataLabel">Lietotāja e-pasts</div>
+          <div>{{ user.email }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Lietotājvārds</div>
+          <div>{{ user.username }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Reģistrējies</div>
+          <div>{{ user.createdAt | date }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Profils labots</div>
+          <div>{{ user.updatedAt | date }}</div>
+        </div>
+      </fieldset>
+      <fieldset cdkDrag>
+        <legend>Orders history</legend>
+        <div class="dataView">
+          <ul>
+            <li *ngFor="let order of orders">
+              <label for="orders">Nr.{{ order.orderNo }}</label>
+              <label for="orders">Produkts {{ order.product }}</label>
+              <a href="">Skatīt detaļas</a>
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+      <fieldset cdkDrag>
+        <legend>History</legend>
+        <div class="dataView">
+          <div class="dataLabel">Lietotāja e-pasts</div>
+          <div>{{ user.email }}</div>
+        </div>
+        <div class="dataView">
+          <div class="dataLabel">Lietotājvārds</div>
+          <div>{{ user.username }}</div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

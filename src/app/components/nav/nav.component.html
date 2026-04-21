@@ -11,16 +11,20 @@
       <input type="text" placeholder="Enter text" />
     </div>
     <ul>
-      <li><a routerLink="/products">Products</a></li>
-      <li><a routerLink="/services">Services</a></li>
-      <li><a routerLink="/shops">Shops</a></li>
-      <li><a routerLink="/aboutUs">About Us</a></li>
-      <li
-        [class.unpressable]="isDisabled"
-        *ngIf="authservice.isLoggedIn; else register"
-      >
+      <li>
+        <a routerLink="/products" routerLinkActive="navActive">Products</a>
+      </li>
+      <li>
+        <a routerLink="/services" routerLinkActive="navActive">Services</a>
+      </li>
+      <li><a routerLink="/shops" routerLinkActive="navActive">Shops</a></li>
+      <li>
+        <a routerLink="/aboutUs" routerLinkActive="navActive">About Us</a>
+      </li>
+      <li *ngIf="authservice.isLoggedIn; else register">
         <a routerLink="/account">Account</a>
       </li>
+
       <ng-template #register>
         <li><a routerLink="/register">Register</a></li>
       </ng-template>
