@@ -1,12 +1,12 @@
 nav {
-    background-color: rgb(110, 119, 101);
+    background-color: rgb(249, 250, 248);
     height: 100%;
     align-self: center;
     display: grid;
     padding: 15px;
     grid-template-columns: 200px 1fr;
     grid-template-areas: "time navigation";
-    box-shadow: 0px -20px 15px rgba(45, 48, 48, 0.5);
+    /* box-shadow: inset 0px 5px 15px rgb(85, 100, 61); */
 }
 
 time {
@@ -54,13 +54,13 @@ time {
 }
 
 .search:hover {
-    background-color: rgba(18, 41, 15, 0.4);
-    box-shadow: 0px 5px 15px black;
+    background-color: rgba(25, 75, 17, 0.4);
+
 }
 
 .search input:focus {
     background-color: rgb(74, 80, 73);
-    box-shadow: 0px 5px 15px black;
+    box-shadow: 0px 5px 15px rgba(25, 75, 17, 1);
     /* border: 2px black solid; */
     outline: none;
 }
@@ -78,7 +78,8 @@ ul {
 ul li {
     height: 100%;
     width: 100px;
-    margin-right: 10px;
+    margin-right: 3px;
+    margin-top: 5px;
     border-radius: 6px;
     font-size: 16px;
 
@@ -86,13 +87,13 @@ ul li {
 
 li a {
     height: 100%;
-    border-radius: 4px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 0px;
     text-decoration: none;
-    background-color: rgba(110, 119, 101, 0.1);
+    background-color: rgb(175, 184, 174);
     color: rgb(14, 13, 13);
 
 }
@@ -106,16 +107,15 @@ li a:active {
 }
 
 li a:hover {
-    background-color: rgba(18, 41, 15, 0.4);
+    background-color: rgba(25, 75, 17, 0.4);
     box-shadow: 0px 5px 15px black;
+    transform: translateY(-10px);
 }
 
-li a:focus {
-    background-color: rgb(74, 80, 73);
-    box-shadow: 0px 5px 15px black;
-
-    /* outline-offset: 2px; */
-}
+/* li a:focus {
+    transform: translateY(-10px);
+    box-shadow: inset 0px -5px 15px rgba(25, 75, 17, 1);
+} */
 
 .unpressable {
     pointer-events: none;

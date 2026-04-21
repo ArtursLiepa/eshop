@@ -1,0 +1,71 @@
+section {
+    height: 100%;
+    background-color: rgba(110, 119, 101, 0.9);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    padding: 20px;
+    min-width: 500px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(110, 119, 101);
+    z-index: 1;
+}
+
+legend {
+    padding: 0px 10px;
+    color: rgb(20, 20, 20);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.dataView {
+    display: flex;
+}
+
+.orderViewList {
+    display: flex;
+}
+
+.orderViewList td {
+    padding-right: 10px;
+}
+
+
+.dataView li {
+
+    display: flex;
+}
+
+.dataView li label {
+    padding-right: 10px;
+}
+
+.dataView li a {
+    text-decoration: underline;
+    flex: 1;
+}
+
+.dataView li:hover {
+    background-color: rgba(47, 79, 79, 0.4);
+
+}
+
+.dataView li a:hover {
+    color: rgb(53, 48, 48);
+    font-weight: 800;
+}
+
+
+.dataLabel {
+    min-width: 200px;
+
+}
+
+.dataValue {}
