@@ -1,65 +1,79 @@
-<div class="registerForm">
-  <form [formGroup]="registerForm" (ngSubmit)="userRegister()">
-    <div class="formField">
-      <label for="name">Name</label>
-      <input
-        class="textInput"
-        id="name"
-        type="text"
-        placeholder="name"
-        formControlName="name"
-      />
-    </div>
-    <div class="formField">
-      <label for="surname">Surname</label>
-      <input
-        class="textInput"
-        id="surname"
-        type="text"
-        placeholder="surname"
-        formControlName="surname"
-      />
-    </div>
-    <div class="formField">
-      <label for="age">Age</label>
-      <input
-        class="textInput"
-        id="age"
-        type="number"
-        placeholder="age"
-        formControlName="age"
-      />
-    </div>
-    <div class="formField">
-      <label for="email">Email</label>
-      <input
-        class="textInput"
-        id="email"
-        type="email"
-        placeholder="email"
-        formControlName="email"
-      />
-    </div>
-    <div class="formField">
-      <label for="username">Username</label>
-      <input
-        class="textInput"
-        id="username"
-        type="text"
-        placeholder="username"
-        formControlName="username"
-      />
-    </div>
-    <div class="formField">
-      <label for="password">Password</label>
-      <input
-        class="textInput"
-        id="password"
-        type="password"
-        placeholder="password"
-        formControlName="password"
-      />
-    </div>
+<div class="registerSection">
+  <article class="registrationArticle">Registration form</article>
+  <form
+    class="registrationForm"
+    [formGroup]="registerForm"
+    (ngSubmit)="userRegister()"
+  >
+    <fieldset>
+      <legend>User information</legend>
+      <div class="formField">
+        <label class="textLabel" for="name">Name *</label>
+        <input
+          class="textInput"
+          id="name"
+          type="text"
+          placeholder="Enter your name"
+          formControlName="name"
+        />
+      </div>
+      <div class="formField">
+        <label class="textLabel" for="surname">Surname *</label>
+        <input
+          class="textInput"
+          id="surname"
+          type="text"
+          placeholder="Enter your surname"
+          formControlName="surname"
+        />
+      </div>
+      <div class="formField">
+        <label class="textLabel" for="age">Age *</label>
+        <input
+          class="textInput"
+          id="age"
+          type="number"
+          min="18"
+          max="80"
+          placeholder="Enter your age"
+          formControlName="age"
+        />
+      </div>
+      <div class="formField">
+        <label class="textLabel" for="email">Email *</label>
+        <input
+          class="textInput"
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Account information</legend>
+      <div class="formField">
+        <label class="textLabel" for="username">Username *</label>
+        <input
+          class="textInput"
+          id="username"
+          type="text"
+          placeholder="Enter your username"
+          formControlName="username"
+        />
+      </div>
+      <div class="formField">
+        <label class="textLabel" for="password">Password *</label>
+        <input
+          class="textInput"
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+          formControlName="password"
+        />
+      </div>
+    </fieldset>
+
     <div class="buttonsBlock">
       <button type="submit">Register</button>
     </div>
