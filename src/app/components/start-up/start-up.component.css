@@ -1,7 +1,48 @@
 .startUpView {
-
-    background-color: darkgoldenrod;
+    background-color: rgb(167, 160, 144);
     height: 100%;
-    display: block;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.startUpView article {
+    font-size: 2rem;
+
+}
+
+.startUpView h1 {
+    font-size: 1.5rem;
+}
+
+.technologyList {
+    display: flex;
+}
+
+.technologyList legend {
+    font-weight: 700;
+    font-size: 20px;
+    ;
+}
+
+.angular {
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    border: 1px black solid;
+}
+
+.image {
+    height: 250px;
+    width: auto;
+
+
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
 
 }

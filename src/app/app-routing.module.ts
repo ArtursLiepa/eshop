@@ -25,6 +25,7 @@ const routes: Routes = [
         (m) => m.OurServicesModule,
       ),
   },
+  { path: 'home', component: StartUpComponent },
   { path: '', component: StartUpComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

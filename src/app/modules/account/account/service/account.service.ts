@@ -3,13 +3,14 @@ import { User } from '../../../../Interfaces/user';
 import { Observable, map } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../../../login/login/auth.service';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountService {
   private http = inject(HttpClient);
-  private userUrl = 'http://localhost:3000/user';
+  // private userUrl = 'http://localhost:3000/user';
   private authService = inject(AuthService);
 
   getUser(): Observable<User> {
@@ -22,7 +23,7 @@ export class AccountService {
     };
     console.log(options);
 
-    return this.http.get<User>(`${this.userUrl}`, options).pipe(
+    return this.http.get<User>(`${environment.apiUrl}/user`, options).pipe(
       map((item) => {
         return {
           name: item.name,

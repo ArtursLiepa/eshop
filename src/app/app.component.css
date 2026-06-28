@@ -1,7 +1,13 @@
 .mainView {
     min-height: 100vh;
-    display: block;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto 1fr auto;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+main {
+    flex: 1;
+    display: flex;
+    min-width: 100%;
 }

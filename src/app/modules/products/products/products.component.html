@@ -1,14 +1,18 @@
 <div class="mainconteiner">
   <div class="contentCategories">
-    <ul>
-      <li *ngFor="let category of categories$ | async">
-        <a
-          routerLinkActive="categoryList"
-          [routerLink]="['./', category.categoryName]"
-          >{{ category.categoryName }}
-        </a>
-      </li>
-    </ul>
+    @if (categories$ | async; as categories) {
+      <ul>
+        @for (category of categories; track category.categoryID) {
+          <li>
+            <a
+              routerLinkActive="categoryList"
+              [routerLink]="['./', category.categoryName]"
+              >{{ category.categoryName }}
+            </a>
+          </li>
+        }
+      </ul>
+    }
   </div>
   <div class="contentListView">
     <router-outlet></router-outlet>

@@ -12,9 +12,7 @@ import { Observable } from 'rxjs';
 export class ProductsComponent implements OnInit {
   categories$: Observable<Category[]>;
 
-  constructor(private service: ProductsService) {
-    this.service = new ProductsService();
-  }
+  constructor(private service: ProductsService) {}
 
   private getCategories() {
     this.categories$ = this.service.getCategoryList();

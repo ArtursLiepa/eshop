@@ -2,7 +2,7 @@ import { inject, Injectable, Signal } from '@angular/core';
 import { Product, Segment, Category } from '../../../Interfaces/products';
 import { map, Observable, of, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,9 +12,9 @@ export class ProductsService {
 
   private http = inject(HttpClient);
 
-  private categoryUrl = 'http://localhost:3000/categories';
-  private segmentUrl = 'http://localhost:3000/segments';
-  private productUrl = 'http://localhost:3000/products';
+  private categoryUrl = `${environment.apiUrl}/categories`;
+  private segmentUrl = `${environment.apiUrl}/segments`;
+  private productUrl = `${environment.apiUrl}/products`;
 
   getCategoryList(): Observable<Category[]> {
     // return of(this.categories);

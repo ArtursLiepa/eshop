@@ -30,9 +30,9 @@ li a {
 }
 
 
-li a:link {
+/* li a:link {
     background-color: rgb(68, 24, 51);
-}
+} */
 
 li a:active {
     background-color: rgb(219, 19, 142);

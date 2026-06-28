@@ -8,9 +8,9 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     height: 100vh;
-}
+} */
 
 .navActive {
     transform: translateY(-10px);
@@ -21,15 +21,17 @@ body {
 
 .mainconteiner {
     min-height: 100%;
+    min-width: 100vw;
+    /* width: 100%; */
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-areas: "contentCategories contentListView";
 }
 
 .contentCategories {
-    width: 100%;
     grid-area: contentCategories;
-    /* background-color: rgb(249, 250, 248); */
+    height: 100%;
+    width: auto;
 }
 
 .categoryList {
@@ -38,7 +40,10 @@ body {
 
 .contentListView {
     grid-area: contentListView;
+    /* min-height: 100%;
+    min-width: 100%; */
     background-color: blueviolet;
+
     /* border: 1px black solid; */
 }
 
