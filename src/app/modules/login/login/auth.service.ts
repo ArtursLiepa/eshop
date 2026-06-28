@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap, map } from 'rxjs';
 import { inject } from '@angular/core';
 import { AuthResponse } from '../../../Interfaces/authentication';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,13 +11,13 @@ import { AuthResponse } from '../../../Interfaces/authentication';
 export class AuthService {
   private token = '';
 
-  authURL = 'http://localhost:3000/auth/login';
+  // authURL = 'http://localhost:3000/auth/login';
 
   private http = inject(HttpClient);
 
   authenticate(username: string, password: string): Observable<string> {
     return this.http
-      .post<AuthResponse>(this.authURL, {
+      .post<AuthResponse>(`${environment.apiUrl}/auth/login`, {
         username,
         password,
       })

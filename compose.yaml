@@ -36,6 +36,9 @@ services:
 
   backend1:
     image: data-api:1.0
+    environment:
+      - CDB_URL=mongodb://mongodb:27017/practiceData
+      - API_URL=3000 
     container_name: backend
     ports:
       - "3000:3000"       # Access backend API from host at localhost:3000
